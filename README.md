@@ -53,33 +53,37 @@ renders normally.
 
 ## 1. Install the patched Wine (isolated, doesn't touch system Wine)
 
-Both options install to `/opt/wine-d2d1`; your system wine stays the default. Pick one.
+> **Not on the AUR (yet).** The AUR froze all new account registrations in June 2026
+> after a [malware wave](https://www.theregister.com/security/2026/06/15/arch-linux-locks-down-aur-signups-amid-wave-of-malicious-commits/5255511),
+> so I can't publish the package there right now. Install straight from this repo
+> instead (below). The `PKGBUILD`s here are AUR-ready, so once registrations reopen it
+> becomes a `paru -S wine-d2d1-dcomp-bin` — this repo will be updated when that happens.
 
-**Option A — prebuilt binary (fast, no compiling).** Downloads an already-compiled
-build and drops it in place — install takes seconds instead of ~30-60 min.
+Clone the repo, then pick one option. Both install to `/opt/wine-d2d1`; your system
+wine stays the default.
 
 ```sh
-# from the AUR:
-paru -S wine-d2d1-dcomp-bin        # or: yay -S ...
-# or manually, from this directory:
-makepkg -si                        # using PKGBUILD-bin (rename it to PKGBUILD)
+git clone https://github.com/mklnln/wine-d2d1-dcomp.git
+cd wine-d2d1-dcomp
 ```
 
-The `-bin` PKGBUILD's `source=` points at a prebuilt `wine-d2d1-11.0-x86_64.tar.zst`
-hosted on a GitHub release; makepkg verifies it against the bundled sha256 checksum.
-
-**Option B — build from source (slow, but fresh for your system).** Compiles giang17's
-branch on your machine (~30-60 min); needs no prebuilt download or hosting.
+**Option A — prebuilt binary (fast, no compiling).** Downloads the already-compiled
+build from this repo's GitHub release and drops it in place — seconds, not ~30-60 min.
+makepkg verifies the download against the bundled sha256 checksum.
 
 ```sh
-# from the AUR:
-paru -S wine-d2d1-dcomp-git
-# or manually, from this directory:
-makepkg -si                        # using PKGBUILD (the source one)
+makepkg -p PKGBUILD-bin -si        # uses PKGBUILD-bin (the prebuilt one)
+```
+
+**Option B — build from source (slow, but fresh for your system).** Compiles giang17's
+branch on your machine (~30-60 min); no prebuilt download.
+
+```sh
+makepkg -si                        # uses PKGBUILD (the source one)
 ```
 
 Same software either way — the only difference is whether *you* compile it or install a
-copy someone already compiled. See the two PKGBUILDs in this directory.
+copy someone already compiled. See the two PKGBUILDs in this repo.
 
 ## 2. Make a dedicated prefix and install the plugin
 
