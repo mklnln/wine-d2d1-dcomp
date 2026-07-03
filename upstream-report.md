@@ -1,8 +1,10 @@
 # Success report to send upstream
 
 ## Where to post
-- **giang17 (patch author)** — open a GitHub Discussion/Issue on
-  https://github.com/giang17/wine  (PATCHES.md actively asks for plugin-test feedback).
+- **giang17 (patch author)** — open a GitHub **Issue** on
+  https://github.com/giang17/wine/issues/new  (Discussions are disabled; Issues are
+  enabled and already used for plugin-rendering feedback). PATCHES.md asks for plugin
+  test reports.
 - **patrickl (COPR) / yabridge community** — yabridge Discord, #general
   (invite from the COPR/Fedora thread: https://discord.gg/pyNeweqadf).
 - Optional: reply on the Fedora thread
