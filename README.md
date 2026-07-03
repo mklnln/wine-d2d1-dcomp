@@ -84,6 +84,15 @@ makepkg -si                        # uses PKGBUILD (the source one)
 Same software either way — the only difference is whether *you* compile it or install a
 copy someone already compiled. See the two PKGBUILDs in this repo.
 
+> **Non-Arch distros (Ubuntu/Debian/Fedora/etc.):** the patch and everything from Step 2
+> onward are distro-agnostic and work anywhere Wine + yabridge do. But the packaging here
+> is Arch-only: the **prebuilt binary won't run elsewhere** (it's compiled against Arch's
+> glibc/libraries), and `makepkg`/`PKGBUILD` are Arch tooling. On other distros you'd
+> compile giang17's `d2d1-dcomp-11.0` branch from source against **your own system's
+> libraries** — that's a normal Wine-from-source build, but the specific build deps and
+> steps are **out of scope for this repo**. Everything after you have a working
+> `/opt/wine-d2d1` applies the same regardless of distro.
+
 ## 2. Make a dedicated prefix and install the plugin
 
 ```sh
