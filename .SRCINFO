@@ -1,0 +1,35 @@
+pkgbase = wine-d2d1-dcomp-git
+	pkgdesc = Wine with giang17 Direct2D/DComp patches for JUCE8/VSTGUI plugins (Pianoteq 9 etc.), installed to /opt/wine-d2d1
+	pkgver = 11.0
+	pkgrel = 1
+	url = https://github.com/giang17/wine
+	arch = x86_64
+	license = LGPL-2.1-or-later
+	makedepends = git
+	makedepends = mingw-w64-gcc
+	makedepends = autoconf
+	makedepends = bison
+	makedepends = flex
+	makedepends = perl
+	makedepends = gettext
+	makedepends = vulkan-headers
+	depends = freetype2
+	depends = fontconfig
+	depends = libpng
+	depends = libjpeg-turbo
+	depends = giflib
+	depends = gnutls
+	depends = alsa-lib
+	depends = libpulse
+	depends = libxcomposite
+	depends = libxcursor
+	depends = libxrandr
+	depends = libxi
+	depends = libxinerama
+	depends = vulkan-icd-loader
+	options = !lto
+	options = staticlibs
+	source = git+https://github.com/giang17/wine.git#branch=d2d1-dcomp-11.0
+	sha256sums = SKIP
+
+pkgname = wine-d2d1-dcomp-git

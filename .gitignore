@@ -1,0 +1,8 @@
+# Prebuilt binary is distributed as a GitHub *release asset*, not committed to git
+# (it's 63 MB and would bloat history forever). Upload it to the release manually.
+*.tar.zst
+
+# makepkg build artifacts, in case anyone builds in-tree
+/pkg/
+/src/
+*.pkg.tar.*

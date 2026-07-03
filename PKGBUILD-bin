@@ -1,0 +1,30 @@
+# Maintainer: mklnln <mklnln@users.noreply.github.com>
+# Prebuilt binary of Wine 11.0 + giang17 Direct2D/DComp patches (branch
+# d2d1-dcomp-11.0). Installs to /opt/wine-d2d1 so it does NOT replace system wine.
+# Saves the ~30-60 min source compile. Build it yourself from wine-d2d1-dcomp-git
+# if you prefer. Patch source: https://github.com/giang17/wine (d2d1-dcomp-11.0)
+#
+# NOTE: rename this file to `PKGBUILD` in its own AUR repo (wine-d2d1-dcomp-bin).
+# Upload wine-d2d1-11.0-x86_64.tar.zst to your GitHub release and set source= below.
+
+pkgname=wine-d2d1-dcomp-bin
+pkgver=11.0
+pkgrel=1
+pkgdesc="Prebuilt Wine with giang17 Direct2D/DComp patches for JUCE8/VSTGUI plugins (Pianoteq 9 etc.), /opt/wine-d2d1"
+arch=('x86_64')
+url="https://github.com/giang17/wine"
+license=('LGPL-2.1-or-later')
+# Runtime libraries the prebuilt binaries link against:
+depends=('freetype2' 'fontconfig' 'libpng' 'libjpeg-turbo' 'giflib' 'gnutls'
+         'alsa-lib' 'libpulse' 'libxcomposite' 'libxcursor' 'libxrandr'
+         'libxi' 'libxinerama' 'vulkan-icd-loader')
+provides=("wine-d2d1-dcomp=$pkgver")
+conflicts=('wine-d2d1-dcomp-git')
+options=('!strip')  # already stripped
+source=("https://github.com/mklnln/wine-d2d1-dcomp/releases/download/v${pkgver}/wine-d2d1-${pkgver}-x86_64.tar.zst")
+sha256sums=('909e283e1e087a93e196defffd2a67120ab2df6ea4edd7f6f45b97528bf8646b')
+
+package() {
+    install -d "$pkgdir/opt"
+    cp -a "$srcdir/wine-d2d1" "$pkgdir/opt/wine-d2d1"
+}
