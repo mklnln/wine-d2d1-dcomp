@@ -22,9 +22,15 @@
 > Pianoteq prefix to the patched Wine and everything else to system wine-staging 9.21 —
 > works perfectly, other plugins unaffected.
 >
+> I packaged it for Arch/CachyOS (source + prebuilt binary PKGBUILDs, plus a full
+> write-up incl. the yabridge dispatcher) here, in case it's useful to point other Arch
+> users at: https://github.com/mklnln/wine-d2d1-dcomp
+> (Not on the AUR — new-account registration is frozen after the June 2026 malware wave —
+> so it's install-from-repo for now.)
+>
 > Just wanted to confirm the 11.0 branch works great outside Fedora and thank you for the
 > patches. Happy to test other plugins or provide build details.
 
-## Bonus
-If you publish the Arch PKGBUILD to the AUR (e.g. `wine-d2d1-dcomp-git`), link it in the
-report so other Arch/CachyOS users can find it.
+## Notes
+- Repo is public and credits you as the patch author throughout. Feel free to link it.
+- If AUR registration reopens later, the PKGBUILDs are already AUR-ready.
