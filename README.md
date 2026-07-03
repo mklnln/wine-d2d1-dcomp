@@ -53,11 +53,10 @@ renders normally.
 
 ## 1. Install the patched Wine (isolated, doesn't touch system Wine)
 
-> **Not on the AUR (yet).** The AUR froze all new account registrations in June 2026
-> after a [malware wave](https://www.theregister.com/security/2026/06/15/arch-linux-locks-down-aur-signups-amid-wave-of-malicious-commits/5255511),
-> so I can't publish the package there right now. Install straight from this repo
-> instead (below). The `PKGBUILD`s here are AUR-ready, so once registrations reopen it
-> becomes a `paru -S wine-d2d1-dcomp-bin` — this repo will be updated when that happens.
+> **Not on the AUR.** The AUR froze all new account registrations in June 2026 after a
+> [malware wave](https://www.theregister.com/security/2026/06/15/arch-linux-locks-down-aur-signups-amid-wave-of-malicious-commits/5255511),
+> so this isn't published there — install straight from this repo instead (below). The
+> `PKGBUILD`s here are AUR-ready if anyone wants to pick that up.
 
 Clone the repo, then pick one option. Both install to `/opt/wine-d2d1`; your system
 wine stays the default.

@@ -60,15 +60,19 @@ I packaged it two ways for Arch/CachyOS:
 Either way it installs to `/opt/wine-d2d1` and **leaves your system Wine as the default.**
 Nothing else on your system changes.
 
+**Not on the AUR** — the AUR froze new registrations in June 2026 after the malware wave,
+so I can't publish there right now. Install straight from the GitHub repo instead:
+
 ```sh
-# prebuilt (fast):
-paru -S wine-d2d1-dcomp-bin        # or yay -S wine-d2d1-dcomp-bin
+git clone https://github.com/mklnln/wine-d2d1-dcomp.git
+cd wine-d2d1-dcomp
 
-# or build it yourself:
-paru -S wine-d2d1-dcomp-git
+# prebuilt (fast — downloads the release binary, checksum-verified):
+makepkg -p PKGBUILD-bin -si
+
+# or build it yourself from source (~30–60 min):
+makepkg -si
 ```
-
-*(Links to the AUR pages + the GitHub release with the prebuilt tarball are at the bottom.)*
 
 ## Set up a dedicated prefix for the plugin
 
@@ -156,8 +160,8 @@ plugins natively and this package can be retired. Until then, this works today.
 - **patrickl** — maintains the [Fedora COPR](https://copr.fedorainfracloud.org/coprs/patrickl/wine-11.8-vstgui-juce8/)
   version; this Arch packaging is just the same idea ported over.
 - **[yabridge](https://github.com/robbert-vdh/yabridge)** by robbert-vdh — the bridge itself.
-- AUR: `wine-d2d1-dcomp-bin` / `wine-d2d1-dcomp-git` — <link once published>
-- Prebuilt binary + full write-up: <your GitHub release link>
+- **Repo + full write-up:** https://github.com/mklnln/wine-d2d1-dcomp
+- **Prebuilt binary:** https://github.com/mklnln/wine-d2d1-dcomp/releases/tag/v11.0
 
 Happy to answer questions — though for anything about the patches themselves, giang17's repo
 is the place.
